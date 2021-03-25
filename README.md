@@ -1,3 +1,3 @@
 # move-next
-# Projeto criado para estudos
-# Consiste em incentivar o usuario a fazer exercícios fisicos e alongamentos
+## 1 - Projeto criado para estudos
+## 2 - Consiste em incentivar o usuario a fazer exercícios fisicos e alongamentos
