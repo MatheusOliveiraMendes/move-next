@@ -8,7 +8,7 @@ const { level } = useContext(ChallengesContext);
 
     return (
         <div className={style.profileContainer}>
-            <img src="img/FotoProfile.jpg" alt="Matheus Oliveira" />
+            <img src="img/FotoProfile.png" alt="Matheus Oliveira" />
             <div>
                 <strong>Matheus Oliveira</strong>
                 <p>
