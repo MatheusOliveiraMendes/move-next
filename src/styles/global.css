@@ -10,6 +10,9 @@
     --blue: #5965E0;
     --blue-dark: #4953B8;
     --blue-twitter: #2AA9E0;
+    --surface: rgba(255, 255, 255, 0.72);
+    --surface-strong: rgba(255, 255, 255, 0.88);
+    --shadow-soft: 0 24px 48px rgba(15, 23, 42, 0.08);
 }
 
 @media (max-width: 1080px) {
@@ -27,8 +30,13 @@
 
 
 body {
-    background: var(--background);
+    min-height: 100vh;
+    background:
+        radial-gradient(1200px circle at 12% -10%, rgba(89, 101, 224, 0.18), transparent 55%),
+        radial-gradient(900px circle at 90% 20%, rgba(76, 214, 46, 0.12), transparent 60%),
+        linear-gradient(160deg, #e3e9ff 0%, #f5f7ff 52%, #ffffff 100%);
     color: var(--text);
+    -webkit-font-smoothing: antialiased;
 }
 
 body,

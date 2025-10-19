@@ -18,31 +18,65 @@ interface HomeProps {
 }
 
 export default function Home(props: HomeProps) {
-    console.log(props)
-
     return (
         <ChallengesProvider
             level={props.level}
             currentExperience={props.currentExperience}
             challengesCompleted={props.challengesCompleted}
         >
-            <div className={styles.container}>
+            <div className={styles.page}>
                 <Head>
-                    <title>Inicio | Move</title>
+                    <title>Home | MoveNext</title>
                 </Head>
 
-                <ExperienceBar />
                 <CountdownProvider>
-                    <section>
-                        <div>
-                            <Profile />
-                            <CompletedChallenges />
-                            <Countdown />
+                    <header className={styles.topbar}>
+                        <div className={styles.logo}>
+                            <img src="/icons/logo.svg" alt="MoveNext logo" />
+                            <strong>MoveNext</strong>
                         </div>
-                        <div>
-                            <ChallengeBox />
-                        </div>
-                    </section>
+                        <nav className={styles.navLinks}>
+                            <button type="button" className={styles.navLinkActive}>Focus</button>
+                            <button type="button">Challenges</button>
+                            <button type="button">History</button>
+                        </nav>
+                        <span className={styles.levelBadge}>Lv. {props.level}</span>
+                    </header>
+
+                    <main className={styles.layout}>
+                        <aside className={styles.sidebar}>
+                            <div className={`${styles.panel} ${styles.profilePanel}`}>
+                                <Profile />
+                            </div>
+
+                            <div className={`${styles.panel} ${styles.experiencePanel}`}>
+                                <span className={styles.panelTitle}>Your journey</span>
+                                <ExperienceBar />
+                            </div>
+
+                            <div className={`${styles.panel} ${styles.statsPanel}`}>
+                                <span className={styles.panelTitle}>Today&apos;s summary</span>
+                                <CompletedChallenges />
+                            </div>
+                        </aside>
+
+                        <section className={styles.content}>
+                            <div className={`${styles.panel} ${styles.focusPanel}`}>
+                                <div>
+                                    <h1>Ready to start the next cycle?</h1>
+                                    <p>Use the timer to stay on track and earn XP with every focused break.</p>
+                                </div>
+                                <div className={styles.countdownWrapper}>
+                                    <Countdown />
+                                </div>
+                            </div>
+
+                            <div className={`${styles.panel} ${styles.challengePanel}`}>
+                                <span className={styles.panelTitle}>Current challenge</span>
+                                <ChallengeBox />
+                            </div>
+                        </section>
+                    </main>
                 </CountdownProvider>
             </div>
         </ChallengesProvider>
